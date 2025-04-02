@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAADmCAYAAADBavm7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARgSURBVHhe7d2hi6VlHIbh2WEZRGQQBLFs1SCIQS3G+QtMZk1bBNsEs+Bmi0mzyWA+wWARg1WrRRYEGRaRYZnR8AbDOd+8cI7f3jNeFyz7CxuWM9y85eHMvevr6yMannz0wdQP44XPv7o3Tu6o4/E3ECJMCBImBAkTgoQJQcKEIGFCkDAhSJgQZPlzC1kI3X1eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCLL8CZld9ByahVCPFxOChAlBwoQgYUKQMCFImBAkTAgSJgQJE4Isf0Kmv8vn05fHtezJJ4/Htczyp8eLCUHChCBhQpAwIUiYECRMCBImBAkTgoQJQZY/Kzj0oufo9NE4bnBxPo5lFkI9XkwIEiYECROChAlBwoQgYUKQMCFImBAkTAiy/FnDxfnchzy76Dm0yYXQP/8/y5+VeDEhSJgQJEwIEiYECROChAlBwoQgYUKQMCHI8mcdd+VDtvxZiRcTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCLH9antUPw6InxosJQcKEIGFCkDAhSJgQJEwIEiYECROChAlBlj+30NnZ2dQPbbPZWPTcUl5MCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIsvxZw8X5QT/ks/d+HNeyzTdvjetATh9ZEq3EiwlBwoQgYUKQMCFImBAkTAgSJgQJE4KECUGWP/s48KJn1jNb/syyENqbFxOChAlBwoQgYUKQMCFImBAkTAgSJgQJE4Isf7a4+vmdqQ/l+MHDcd3gzy/HcYOTd8exssvvx3GD5z8cx7KrX78Y17Lj136wENrBiwlBwoQgYUKQMCFImBAkTAgSJgQJE4KECUGWP1scfPkza3YhdGiTi55Zl99+Nq5lJ+//YvmzgxcTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCLH+2ePrdG1Mfyv23Px4X/2b5sz8vJgQJE4KECUHChCBhQpAwIUiYECRMCBImBFn+bGH5s8PkdxJdbh6Pa5nlz25eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCfOfPFv+77/yZ/C6fWb7zZ39eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROChLnF1W9/Tf2B/4owIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhyG/72uLy61fnftvXmy+Oa9nxg4fjipr8bV9Xv1+Oa9nTn/4Y1zK/7Ws3LyYECROChAlBwoQgYUKQMCFImBAkTAgSJgRZ/mwxu/w5fuW5cS2b/ncvnYxrXbOLnlmWP/vzYkKQMCFImBAkTAgSJgQJE4KECUHChCBhQpDlzx4OvRC6//rpuA7Douf28mJCkDAhSJgQJEwIEiYECROChAlBwoQgYUKQ5c8KZhdCdRY96/FiQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCztHR3yEd3ilT9DLZAAAAAElFTkSuQmCC">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAADmCAYAAADBavm7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARgSURBVHhe7d2hi6VlHIbh2WEZRGQQBLFs1SCIQS3G+QtMZk1bBNsEs+Bmi0mzyWA+wWARg1WrRRYEGRaRYZnR8AbDOd+8cI7f3jNeFyz7CxuWM9y85eHMvevr6yMannz0wdQP44XPv7o3Tu6o4/E3ECJMCBImBAkTgoQJQcKEIGFCkDAhSJgQZPlzC1kI3X1eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCLL8CZld9ByahVCPFxOChAlBwoQgYUKQMCFImBAkTAgSJgQJE4Isf0Kmv8vn05fHtezJJ4/Htczyp8eLCUHChCBhQpAwIUiYECRMCBImBAkTgoQJQZY/Kzj0oufo9NE4bnBxPo5lFkI9XkwIEiYECROChAlBwoQgYUKQMCFImBAkTAiy/FnDxfnchzy76Dm0yYXQP/8/y5+VeDEhSJgQJEwIEiYECROChAlBwoQgYUKQMCHI8mcdd+VDtvxZiRcTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCLH9antUPw6InxosJQcKEIGFCkDAhSJgQJEwIEiYECROChAlBlj+30NnZ2dQPbbPZWPTcUl5MCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIsvxZw8X5QT/ks/d+HNeyzTdvjetATh9ZEq3EiwlBwoQgYUKQMCFImBAkTAgSJgQJE4KECUGWP/s48KJn1jNb/syyENqbFxOChAlBwoQgYUKQMCFImBAkTAgSJgQJE4Isf7a4+vmdqQ/l+MHDcd3gzy/HcYOTd8exssvvx3GD5z8cx7KrX78Y17Lj136wENrBiwlBwoQgYUKQMCFImBAkTAgSJgQJE4KECUGWP1scfPkza3YhdGiTi55Zl99+Nq5lJ+//YvmzgxcTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCLH+2ePrdG1Mfyv23Px4X/2b5sz8vJgQJE4KECUHChCBhQpAwIUiYECRMCBImBFn+bGH5s8PkdxJdbh6Pa5nlz25eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCfOfPFv+77/yZ/C6fWb7zZ39eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROChLnF1W9/Tf2B/4owIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhyG/72uLy61fnftvXmy+Oa9nxg4fjipr8bV9Xv1+Oa9nTn/4Y1zK/7Ws3LyYECROChAlBwoQgYUKQMCFImBAkTAgSJgRZ/mwxu/w5fuW5cS2b/ncvnYxrXbOLnlmWP/vzYkKQMCFImBAkTAgSJgQJE4KECUHChCBhQpDlzx4OvRC6//rpuA7Douf28mJCkDAhSJgQJEwIEiYECROChAlBwoQgYUKQ5c8KZhdCdRY96/FiQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCztHR3yEd3ilT9DLZAAAAAElFTkSuQmCC">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAADmCAYAAADBavm7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARgSURBVHhe7d2hi6VlHIbh2WEZRGQQBLFs1SCIQS3G+QtMZk1bBNsEs+Bmi0mzyWA+wWARg1WrRRYEGRaRYZnR8AbDOd+8cI7f3jNeFyz7CxuWM9y85eHMvevr6yMannz0wdQP44XPv7o3Tu6o4/E3ECJMCBImBAkTgoQJQcKEIGFCkDAhSJgQZPlzC1kI3X1eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCLL8CZld9ByahVCPFxOChAlBwoQgYUKQMCFImBAkTAgSJgQJE4Isf0Kmv8vn05fHtezJJ4/Htczyp8eLCUHChCBhQpAwIUiYECRMCBImBAkTgoQJQZY/Kzj0oufo9NE4bnBxPo5lFkI9XkwIEiYECROChAlBwoQgYUKQMCFImBAkTAiy/FnDxfnchzy76Dm0yYXQP/8/y5+VeDEhSJgQJEwIEiYECROChAlBwoQgYUKQMCHI8mcdd+VDtvxZiRcTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCLH9antUPw6InxosJQcKEIGFCkDAhSJgQJEwIEiYECROChAlBlj+30NnZ2dQPbbPZWPTcUl5MCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIsvxZw8X5QT/ks/d+HNeyzTdvjetATh9ZEq3EiwlBwoQgYUKQMCFImBAkTAgSJgQJE4KECUGWP/s48KJn1jNb/syyENqbFxOChAlBwoQgYUKQMCFImBAkTAgSJgQJE4Isf7a4+vmdqQ/l+MHDcd3gzy/HcYOTd8exssvvx3GD5z8cx7KrX78Y17Lj136wENrBiwlBwoQgYUKQMCFImBAkTAgSJgQJE4KECUGWP1scfPkza3YhdGiTi55Zl99+Nq5lJ+//YvmzgxcTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCLH+2ePrdG1Mfyv23Px4X/2b5sz8vJgQJE4KECUHChCBhQpAwIUiYECRMCBImBFn+bGH5s8PkdxJdbh6Pa5nlz25eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROCfOfPFv+77/yZ/C6fWb7zZ39eTAgSJgQJE4KECUHChCBhQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhSJgQJEwIEiYECROChLnF1W9/Tf2B/4owIUiYECRMCBImBAkTgoQJQcKEIGFCkDAhyG/72uLy61fnftvXmy+Oa9nxg4fjipr8bV9Xv1+Oa9nTn/4Y1zK/7Ws3LyYECROChAlBwoQgYUKQMCFImBAkTAgSJgRZ/mwxu/w5fuW5cS2b/ncvnYxrXbOLnlmWP/vzYkKQMCFImBAkTAgSJgQJE4KECUHChCBhQpDlzx4OvRC6//rpuA7Douf28mJCkDAhSJgQJEwIEiYECROChAlBwoQgYUKQ5c8KZhdCdRY96/FiQpAwIUiYECRMCBImBAkTgoQJQcKEIGFCztHR3yEd3ilT9DLZAAAAAElFTkSuQmCC">
+    <title>張家銓|履歷</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 17px; /* 基礎字體大小 */
+            font-weight: bold;
+            background-image: url('https://raw.githubusercontent.com/david19961129/my-images/refs/heads/main/pexels-stywo-1054218.jpg'); /* 替換成你的圖片路徑 */
+            background-size: cover; /* 讓圖片覆蓋整個背景 */
+            background-position: center; /* 讓圖片置中 */
+            background-repeat: no-repeat; /* 不重複 */
+            color: rgb(0, 0, 0); /*字體顏色*/
+            margin: 0;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #f27c46;
+        }
+
+        .container { /*主要區域*/
+            max-width: 800px;
+            margin: 20px auto; /*0代表上下，auto左右*/
+            background: rgba(255, 255, 255, 0.4); /* 半透明白色 */
+            padding: 20px; /*內邊20*/
+            border-radius: 8px; /*圓角*/
+            backdrop-filter: blur(10px); /* 背景模糊 10px */
+        }
+
+            .container button {
+                background: none;
+                border: none;
+                color: rgb(0, 0, 0);
+                padding: 0px;
+                margin: 10px 0;
+                cursor: pointer;
+                text-align: left;
+            }
+
+                .container button:hover {
+                    background: rgb(255, 106, 0);
+                }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /*分割2層對其上方*/
+        .grid-section {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            align-items: start;
+        }
+
+
+        /*分割2層對其中間*/
+        .grid-section-center {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%; /*100%=800px*/
+            height: auto; /*自動調整*/
+            border-radius: 8px;
+        }
+
+        #my-image1 {
+            width: 200px; /* 設定固定寬度 */
+            height: auto; /* 自動計算高度，確保不變形 */
+        }
+
+        #my-image2 {
+            height: auto; /* 設定固定寬度 */
+            width: 100px /* 自動計算高度，確保不變形 */
+        }
+
+        #my-image3 {
+            height: auto; /* 設定固定寬度 */
+            width: 50px /* 自動計算高度，確保不變形 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-section">
+            <div>
+                <img id="my-image1" src="https://raw.githubusercontent.com/david19961129/my-images/refs/heads/main/IMG_4114_1.jpg" alt="我的照片">
+                <p><strong style="font-size: 50px;">張家銓 </strong></p>
+                <p><strong style="font-size: 25px;">程式設計</strong></p>
+                <!--這是側邊按鈕-->
+                <button onclick="showSection('experience')"><strong style="font-size: 20px;">工作經歷與學歷</strong></button><br />
+                <button onclick="showSection('contact')"><strong style="font-size: 20px;">聯絡資料</strong></button><br />
+                <button onclick="showSection('skills')"><strong style="font-size: 20px;">技能介紹</strong></button><br />
+                <!--待修整側邊按鈕-->
+                <button onclick="showSection('A')"><strong style="font-size: 20px;">首頁</strong></button><br />
+                <button onclick="showSection('B')"><strong style="font-size: 20px;">自傳</strong></button><br />
+                <button onclick="showSection('C')"><strong style="font-size: 20px;">作品展示</strong></button><br />
+
+            </div>
+            <div class="content">
+                <div id="experience">
+                    <h2>工作經歷與學歷</h2>
+                    <p><strong style="font-size: 20px;">學歷</strong></p>
+                    <div class="grid-section-center">
+                        <img id="my-image3" src="https://raw.githubusercontent.com/david19961129/my-images/refs/heads/main/DYUimag.jpg" alt="大學照">
+                        <p>
+                            大葉大學<br />
+                            綠色產品設計學位學程大學畢業
+                            [2015/9~2019/5]
+
+                        </p>
+                    </div>
+                    <br />
+                    <div class="grid-section-center">
+                        <img id="my-image3" src="https://raw.githubusercontent.com/david19961129/my-images/refs/heads/main/TBDS.jpg" alt="高中照">
+                        <p>
+                            東莞台商子弟學校<br />
+                            普通科高中畢業[2008/9~2015/5]
+                        </p>
+                    </div>
+                    <p><strong style="font-size: 20px;">工作經驗</strong></p>
+                    <div class="grid-section-center">
+                        <img id="my-image2" src="https://raw.githubusercontent.com/david19961129/my-images/refs/heads/main/worldgym.png" alt="我的照片">
+                        <p>
+                            櫃檯客服人員<br />
+                            香港商世界健身事業有限公司台灣分公司<br />
+                            2024/7~2024/8[2個月]<br />
+                        </p>
+                    </div>
+                    <br />
+                    <div class="grid-section-center">
+                        <img id="my-image2" src="https://raw.githubusercontent.com/david19961129/my-images/refs/heads/main/fujitec.png" alt="我的照片">
+                        <p>
+                            設備工程師<br />
+                            富士達股份有限公司（日商電梯製造）<br />
+                            2023/3~2024/3[1年]<br />
+                            Salvagnini S4/P4機台等設備維護、生產、設計圖處理
+                        </p>
+                    </div>
+                    <p>
+                        副店長
+                        慕義有限公司（其他零售業 1~30人）
+                        門市／店員／專櫃人員新竹縣竹北市
+                        2020/12~2023/1
+                        2年2個月
+                        1.商品製作
+                        2.店面維護
+                        3.庫存管理
+                        4.接收網路訂單
+                    </p>
+                    <p>
+                        內場工讀
+                        簡單生活料理館（餐館業 1~30人）
+                        餐廚助手新竹縣竹北市
+                        2015/4~2015/6
+                        3個月
+                        1.料理製作
+                        2.餐廳整潔
+                        3.食材備貨
+                    </p>
+                </div>
+
+                <div id="contact" class="hidden">
+                    <h2>聯絡資料</h2>
+                    <p><strong style="font-size: 20px;">電話</strong>:0909368858</p>
+                    <p><strong style="font-size: 20px;">emil</strong>:david19961129@gmail.com</p>
+                </div>
+
+                <div id="skills" class="hidden">
+                    <h2>技能介紹</h2>
+                    <p>技能</p>
+                    <p>3D繪圖:SolidWorks、autocand</p>
+                    <p>程式語言:C#、pythone、java、C++</p>
+                    <p>文書工具:excel、powerpoint、world</p>
+                    <p>基礎:Lunx、windos</p>
+                    <p>證照</p>
+                    <p>pythone</p>
+                    <p>普通重型機車駕照普通小型車駕照</p>
+                </div>
+
+                <div id="B" class="hidden">
+                    <h2>自傳</h2>
+                    <p>
+                        <strong style="font-size: 20px;">教育背景：</strong>
+                        <br />
+                        由於長輩於大陸工作，就讀台商住宿學校，並於高中畢業後才回台，
+                        畢業於大葉大學，主修綠色產品設計。
+                    </p>
+                    <p>
+                        <strong style="font-size: 20px;">工作經歷：</strong>
+                        <br />
+                        畢業後，加入蠟燭公司，擔任副店長。在崗位上負責店面運作與商品製作，
+                        也藉此到學習模具基礎開發，之後，轉職至日商富士達公司擔任設備工程師，
+                        負責現場各設備維護，Salvagnini設備生產編成，CAD/Solid works設計圖調整，
+                        以及現場各項書面作業，同時培養了我團隊合作和溝通能力。
+                    </p>
+
+                </div>
+
+            </div>
+            <script>
+                function showSection(sectionId) {
+                    document.querySelectorAll('.content > div').forEach(div => {
+                        div.classList.add('hidden');
+                    });
+                    document.getElementById(sectionId).classList.remove('hidden');
+                }
+            </script>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
