@@ -1,0 +1,325 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #393939;
+    opacity: 0.8;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 99;
+}
+
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 30%;
+}
+
+header li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    /* background-color: hsla(0, 0%, 100%, 0); */
+    /* border: none; */
+}
+
+
+header h1 {
+    color: #ffffff;
+    position: absolute;
+    top: 0%;
+    line-height: 80px;
+    left: 1vw;
+    background-image: url(#);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1;
+    /*text-indent: -999px;*/
+}
+
+
+/* 打勾框隱藏 */
+header input {
+    display: none;
+}
+
+/* 展開頁面時隱藏 */
+.menu {
+    display: none;
+}
+
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.section-1 {
+    position: relative;
+    width: 100%;
+}
+
+.section-1 img {
+    /*方便固定瞭覽列，不影響其他區縮排*/
+    /* background-color: #0097A7;
+    height: 80px;*/
+    width: 100%;
+    display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    text-align: center;
+}
+
+.text-overlay h1 {
+    position: relative;
+    color: wheat;
+    font-size: 3vw;
+    transform: translate(-50%, 0%);
+
+}
+
+.text-overlay p {
+    position: relative;
+    color: wheat;
+    font-size: 2vw;
+    transform: translate(-50%, 0%);
+
+}
+
+.section0 {
+    background-color: #252525;
+    display: flex;
+    align-items: center;
+}
+
+.selfie {
+    position: relative;
+    width: 30%;
+    align-items: center;
+    text-align: center;
+}
+.section0 img {
+    /* 位置至中 */
+    width: 50%;
+    min-width: 200px;
+    /* border-radius: 20px; */
+    margin: 0.5%;
+    
+}
+
+
+.info {
+    position: relative;
+    /* width: 70%; */
+    /* background-color: #f2c464;
+    border: 20px #f2c464 solid; */
+    padding: 1.5%;
+    /* border-radius: 20px; */
+    margin: 0.5%;
+}
+
+.info h1{
+    color: #ffffff;
+}
+
+.section1,
+.section3,
+.section5 {
+    background-color: #2c3658;
+    border-style: solid;
+    border-color: #2c3658;
+    border-width: 5px;
+    padding: 1.5%;
+    /* border-radius: 20PX; */
+    /* margin: 0.5%; */
+    /*圓角*/
+}
+
+
+.section2,
+
+.section4 {
+    background-color: #252525;
+    border-style: solid;
+    border-color: #252525;
+    border-width: 5px;
+    padding: 1.5%;
+    /* border-radius: 20PX; */
+    /* margin: 0.5%; */
+    /*圓角*/
+}
+
+
+.section1 p,
+
+.section3 p,
+
+.section5 p {
+    color: #ffffff;
+
+}
+
+.section0 p,
+.section2 p,
+.section4 p{
+    color: #f2c464;
+
+}
+
+.section0 h2,
+
+.section2 h2,
+
+.section4 h2{
+    color: #fdffec;
+}
+
+
+.section1 h2,
+
+.section3 h2,
+
+.section5 h2 {
+    color: #0097A7;
+}
+
+.section2 a:hover {
+    text-decoration: underline;
+}
+
+.section3 img {
+    width: 5vw;
+}
+
+
+.section0 h3,
+.section1 h3,
+.section4 h3 {
+    color: #0097A7;
+}
+
+footer {
+    background-color: #252525;
+    border: 5px solid #252525;
+    padding: 1.5%;
+}
+
+footer p {
+    color: #f2c464;
+}
+
+footer h2 {
+    color: #f2c464;
+}
+
+footer a {
+    color: #f2c464;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+input:checked~.menuSwitch {
+    max-height: 700px;
+}
+
+
+/* 響應式設計語法 */
+@media screen and (max-width: 768px) {
+
+    header h1 {
+        left: 50%;
+        transform: translateX(-50%);
+        /* 至中寫法 */
+    }
+
+    .section0 {
+        flex-direction: column;
+    }
+
+    .selfie{
+        align-items: center;
+        text-align: center;
+    }
+
+    .section0 img {
+        
+        width: 30%;
+        border-radius: 20px;
+        margin: 0.5%;
+    }
+
+    /* 個人特質 */
+    .info {
+        width: 90%;
+        background-color: #252525;
+        border: 20px #252525 solid;
+        padding: 1.5%;
+        border-radius: 20px;
+        margin: 0.5%;
+        text-align: center;
+        font-size: 2vw;
+    }
+
+    /* 漢堡圖案 */
+    .menu {
+        display: block;
+        /* background-color: transparent; */
+        color: #ffffff;
+        font-size: 30px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        /* border-color: #f2c464; */
+        cursor: pointer;
+        /* 觸碰變手指 */
+    }
+
+    /* 漢堡開關與展開選單 */
+    .menuSwitch {
+        /* 隱藏選單 */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 20%;
+        max-height: 0;
+        overflow: hidden;
+        transition: .5s;
+        clear: both;
+        background: #303030;
+
+
+        li {
+            text-align: center;
+
+            a {
+                display: block;
+                font-size: 20px;
+                color: #f3f1f1;
+
+                &:hover {
+                    background: #ffffff;
+                    color: #0097A7;
+                }
+            }
+        }
+    }
+
+    .section3 img {
+        width: 80px;
+    }
+
+
+}
